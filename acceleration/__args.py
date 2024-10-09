@@ -2,7 +2,7 @@
 @Author: Conghao Wong
 @Date: 2023-08-08 15:19:56
 @LastEditors: Ziqian Zou
-@LastEditTime: 2024-10-09 16:02:24
+@LastEditTime: 2024-10-09 20:30:20
 @Description: file content
 @Github: https://cocoon2wong.github.io
 @Copyright 2023 Conghao Wong, All Rights Reserved.
@@ -14,7 +14,20 @@ from qpid.args import DYNAMIC, STATIC, TEMPORARY, EmptyArgs
 class AccelerationArgs(EmptyArgs):
 
     @property
-    def 
+    def acc_speed(self) -> int:
+        """
+        Choose whether to use the acceleration speed in Acceleration models.
+        """
+        return self._arg('acc_speed', 1,
+                         argtype=STATIC) 
+    
+    @property
+    def acc_dirction(self) -> int:
+        """
+        Choose whether to use the acceleration speed of dirction in Acceleration models.
+        """
+        return self._arg('acc_speed', 1,
+                         argtype=STATIC)
 
     @property
     def rel_speed(self) -> int:
@@ -44,27 +57,6 @@ class AccelerationArgs(EmptyArgs):
         It should be manually set at each training run.
         """
         return self._arg('partitions', -1, argtype=STATIC)
-
-    @property
-    def use_velocity(self) -> int:
-        """
-        Choose whether to use the velocity factor in the SocialCircle.
-        """
-        return self._arg('use_velocity', 1, argtype=STATIC)
-
-    @property
-    def use_distance(self) -> int:
-        """
-        Choose whether to use the distance factor in the SocialCircle.
-        """
-        return self._arg('use_distance', 1, argtype=STATIC)
-
-    @property
-    def use_direction(self) -> int:
-        """
-        Choose whether to use the direction factor in the SocialCircle.
-        """
-        return self._arg('use_direction', 1, argtype=STATIC)
 
     @property
     def use_move_direction(self) -> int:
