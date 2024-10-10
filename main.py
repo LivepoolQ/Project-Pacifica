@@ -1,8 +1,8 @@
 """
 @Author: Conghao Wong
 @Date: 2022-06-20 15:28:14
-@LastEditors: Conghao Wong
-@LastEditTime: 2024-10-08 21:47:08
+@LastEditors: Ziqian Zou
+@LastEditTime: 2024-10-09 21:31:04
 @Description: file content
 @Github: https://github.com/cocoon2wong
 @Copyright 2022 Conghao Wong, All Rights Reserved.
@@ -13,6 +13,8 @@ import sys
 import torch
 
 import qpid
+
+import acceleration
 
 # Only for debug
 try:
