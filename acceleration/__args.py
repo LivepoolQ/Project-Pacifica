@@ -2,7 +2,7 @@
 @Author: Conghao Wong
 @Date: 2023-08-08 15:19:56
 @LastEditors: Ziqian Zou
-@LastEditTime: 2024-10-09 20:30:20
+@LastEditTime: 2024-10-10 11:02:01
 @Description: file content
 @Github: https://cocoon2wong.github.io
 @Copyright 2023 Conghao Wong, All Rights Reserved.
@@ -14,7 +14,7 @@ from qpid.args import DYNAMIC, STATIC, TEMPORARY, EmptyArgs
 class AccelerationArgs(EmptyArgs):
 
     @property
-    def acc_speed(self) -> int:
+    def use_acc_speed(self) -> int:
         """
         Choose whether to use the acceleration speed in Acceleration models.
         """
@@ -22,12 +22,19 @@ class AccelerationArgs(EmptyArgs):
                          argtype=STATIC) 
     
     @property
-    def acc_dirction(self) -> int:
+    def use_acc_dirction(self) -> int:
         """
         Choose whether to use the acceleration speed of dirction in Acceleration models.
         """
         return self._arg('acc_speed', 1,
                          argtype=STATIC)
+    
+    @property
+    def use_distance(self) -> int:
+        """
+        Choose whether to use the distance factor in the SocialCircle.
+        """
+        return self._arg('use_distance', 1, argtype=STATIC)
 
     @property
     def rel_speed(self) -> int:
